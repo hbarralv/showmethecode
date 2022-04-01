@@ -4,6 +4,10 @@ const salas = document.querySelectorAll('[sala-select]')
 // Busca el elemento del cuerpo del contenedor donde se colocará el h2
 const body = document.querySelector('#container-body')
 
+//Busca todos los elementos que contengan el atributo [avatar]
+const avatares = document.querySelectorAll('[avatar]')
+
+
 // Etiqueta h2 donde se mostrará el mensaje de la sala guardada
 const h2 = document.createElement('h2')
 

@@ -7,6 +7,84 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel='stylesheet' href="assets/bootstrap/css/bootstrap.min.css" />
+    <style>
+
+        ul {
+            list-style-type: none;
+        }
+
+        li {
+            float:left
+        }
+
+        img {
+            cursor: pointer;
+            width: 150px;
+        }
+
+        .container {
+            height: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .drop-zone {
+            position: relative;
+            width: 250px;
+            height: 175px;
+            overflow: hidden;
+            background: #bee0eb;
+            color: white;
+            box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+            margin: 5px;
+            border-radius: 25px;
+        }
+
+        .box {
+            position:relative;
+            width: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .drop-zone {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        } 
+
+        .btn {
+            position: relative;
+            width: 250px;
+            height: 175px;
+            overflow: hidden;
+            background: #bee0eb;
+            border-radius: 25px;
+            display:flex;
+            align-items: center;
+            justify-content: center;
+        }
+</style>
+
+<!-- Definicion de script para definir el Drag and Drop -->
+<script>
+    function allowDrop(evento) {
+      evento.preventDefault();
+    }
+    
+    function drag(evento) {
+      evento.dataTransfer.setData("text", evento.target.id);
+    }
+    
+    function drop(evento) {
+      evento.preventDefault();
+      var data = evento.dataTransfer.getData("text");
+      evento.target.appendChild(document.getElementById(data));
+    }
+</script>
+
 </head>
 <!-- Pagina de login -->
 
@@ -28,7 +106,8 @@
                                         <input type="hidden" name='usuario' value="Damian" />
                                         <input type="hidden" name='sala' value="1" />
                                         <!-- Ponemos el atributo sala-select y atributo único ID1 -->
-                                        <button type='submit' sala-select id="1" class="btn btn-primary">
+                                        <!-- Se definen tambien las propiedades para permitir depositar elementos -->
+                                        <button type='submit' sala-select id="1" ondrop="drop(event)" ondragover="allowDrop(event)" class="btn btn-primary">
                                             Sala 1
                                         </button>
                                     </form>
@@ -39,7 +118,8 @@
                                         <input type="hidden" name='usuario' value="Damian" />
                                         <input type="hidden" name='sala' value="2" />
                                         <!-- Ponemos el atributo sala-select y atributo único ID1 -->
-                                        <button type='submit' sala-select id="2" class="btn btn-primary">
+                                        <!-- Se definen tambien las propiedades para permitir depositar elementos -->
+                                        <button type='submit' sala-select id="2" ondrop="drop(event)" ondragover="allowDrop(event)" class="btn btn-primary">
                                             Sala 2
                                         </button>
                                     </form>
@@ -50,7 +130,8 @@
                                         <input type="hidden" name='usuario' value="Damian" />
                                         <input type="hidden" name='sala' value="3" />
                                         <!-- Ponemos el atributo sala-select y atributo único ID1 -->
-                                        <button type='submit' sala-select id="3" class="btn btn-primary">
+                                        <!-- Se definen tambien las propiedades para permitir depositar elementos -->
+                                        <button type='submit' sala-select id="3" ondrop="drop(event)" ondragover="allowDrop(event)" class="btn btn-primary">
                                             Sala 3
                                         </button>
                                     </form>
@@ -61,7 +142,8 @@
                                         <input type="hidden" name='usuario' value="Damian" />
                                         <input type="hidden" name='sala' value="4" />
                                         <!-- Ponemos el atributo sala-select y atributo único ID1 -->
-                                        <button type='submit' sala-select id="4" class="btn btn-primary">
+                                        <!-- Se definen tambien las propiedades para permitir depositar elementos -->
+                                        <button type='submit' sala-select id="4" ondrop="drop(event)" ondragover="allowDrop(event)" class="btn btn-primary">
                                             Sala 4
                                         </button>
                                     </form>
@@ -69,6 +151,33 @@
                             </div>
 
                         </div>
+
+                        <!-- Definicion de espacio para los avatares -->
+                        <!-- Se definiran tambien las propiedades para depositar de vuelta los avatares desde las salas -->
+
+                        <div class="container" ondrop="drop(event)" ondragover="allowDrop(event)">
+
+                            <section class="drag-avatar">
+                            <ul class="avatares">
+                              <li>
+                                <!-- Se definiran las propiedades draggable y ondragstart para permitir arrastrar los elementos -->
+                                <img avatar id="avatar1" alt="avatar 1" draggable="true" ondragstart="drag(event)" class="img" src="/public/assets/images/1.png"/>
+                              </li>
+                              <li>
+                                <img avatar id="avatar2" alt="avatar 2" draggable="true" ondragstart="drag(event)" class="img" src="/public/assets/images/2.png">
+                              </li>
+                              <li>
+                                <img avatar id="avatar3" alt="avatar 3" draggable="true" ondragstart="drag(event)" class="img" src="/public/assets/images/3.png">
+                              </li>
+                            </ul>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            </section>
+                            </div>
                     </div>
                 </div>
             </div>
