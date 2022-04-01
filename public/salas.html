@@ -7,7 +7,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel='stylesheet' href="assets/bootstrap/css/bootstrap.min.css" />
+
+    <style>
+
+            ul {
+                list-style-type: none;
+            }
+
+            li {
+                float:left
+            }
+
+            img {
+                cursor: pointer;
+                width: 150px;
+            }
+            
+            .container {
+                height: 100%;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+            }
+            
+            .drop-zone {
+                position: relative;
+                width: 250px;
+                height: 175px;
+                overflow: hidden;
+                background: #bee0eb;
+                color: white;
+                box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+                margin: 5px;
+                border-radius: 25px;
+            }
+
+            .box {
+                position:relative;
+                width: 300px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .drop-zone {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }  
+
+    </style>
 </head>
+
 <!-- Pagina de login -->
 
 <body>
@@ -23,27 +74,27 @@
                         <div class="container">
                             <div class="row">
                                 <!-- Genera HTML para cada una de las salas -->
-                                <div class="col">
+                                <div class="box">
                                     <!-- Ponemos el atributo sala-select y atributo único ID1 -->
-                                    <h3 sala-select id="1" class="border rounded pointer" style="cursor: pointer">
+                                    <h3 sala-select id="1" class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)" style="cursor: pointer">
                                         Sala 1
                                     </h3>
                                 </div>
-                                <div class="col">
+                                <div class="box">
                                     <!-- Ponemos el atributo sala-select y atributo único ID2 -->
-                                    <h3 sala-select id="2" class="border rounded pointer" style="cursor: pointer">
+                                    <h3 sala-select id="2" class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)" style="cursor: pointer">
                                         Sala 2
                                     </h3>
                                 </div>
-                                <div class="col">
+                                <div class="box">
                                     <!-- Ponemos el atributo sala-select y atributo único ID3 -->
-                                    <h3 sala-select id="3" class="border rounded pointer" style="cursor: pointer">
+                                    <h3 sala-select id="3" class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)" style="cursor: pointer">
                                         Sala 3
                                     </h3>
                                 </div>
-                                <div class="col">
+                                <div class="box">
                                     <!-- Ponemos el atributo sala-select y atributo único ID4 -->
-                                    <h3 sala-select id="4" class="border rounded pointer" style="cursor: pointer">
+                                    <h3 sala-select id="4" class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)" style="cursor: pointer">
                                         Sala 4
                                     </h3>
                                 </div>
@@ -51,6 +102,25 @@
 
                         </div>
                     </div>
+
+                    <div class="container">
+
+                    <section class="drag-avatar">
+                    <ul class="avatares">
+                      <li>
+                        <!-- Las imagenes no necesitan atributo especifico para arrastrar -->
+                        <img avatar id="avatar1" alt="avatar 1" class="img" src="/public/assets/images/1.png"/>
+                      </li>
+                      <li>
+                        <img avatar id="avatar2" alt="avatar 2" class="img" src="/public/assets/images/2.png">
+                      </li>
+                      <li>
+                        <img avatar id="avatar3" alt="avatar 3" class="img" src="/public/assets/images/3.png">
+                      </li>
+                    </ul>
+                    </section>
+                    </div>
+
                 </div>
             </div>
         </div>

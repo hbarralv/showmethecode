@@ -4,6 +4,9 @@ const salas = document.querySelectorAll('[sala-select]')
 // Busca el elemento del cuerpo del contenedor donde se colocará el h2
 const body = document.querySelector('#container-body')
 
+//Busca todos los elementos que contengan el atributo [avatar]
+const avatares = document.querySelectorAll('[avatar]')
+
 // Etiqueta h2 donde se mostrará el mensaje de la sala guardada
 const h2 = document.createElement('h2')
 
@@ -32,3 +35,72 @@ if (salaGuardada) {
   // En caso de que haya, cambiamos el mensaje del H2
   h2.innerHTML = 'Sala Seleccionada ' + salaGuardada
 }
+
+// Arrastrar y soltar elementos
+
+let dragged;
+
+function allowDrop(event){
+  event.preventDefault();
+}
+
+function onDragOver(event) {
+  event.preventDefault();
+}
+
+function onDragLeave(event) {
+  event.sala.style.background = '';
+}
+
+function onDragEnter(event) {
+  const sala = event.sala;
+  if (sala && dragged) {
+      event.preventDefault();
+      event.dataTransfer.dropEffect = 'move'
+      sala.style.background = '#1f904e';
+  }
+}
+
+function onDrop(event) {
+  const sala = event.sala;
+  if (sala && dragged) {
+    sala.style.backgroundColor = '';
+    event.preventDefault();
+    dragged.salas.removeChild(dragged);
+    dragged.style.opacity = '';
+    sala.appendChild(dragged);
+  }
+}
+
+function onDragStart(event) {
+  let sala = event.sala;
+  if (sala && sala.salas === 'drop-zone') {
+      dragged = sala;
+      event.dataTransfer.setData('text', sala.id);
+      event.dataTransfer.dropEffect = 'move';
+      event.sala.style.opacity = .3;
+  }
+}
+
+function onDragEnd(event) {
+  if (event.sala && event.sala.salas === 'drop-zone') {
+      event.sala.style.opacity = '';
+      dragged = null; 
+  }
+}
+
+const avatar = document.querySelector('.avatares');
+const sala = document.querySelector('.drop-zone');
+
+Array.from(salas).forEach(avatar => {
+  avatar.addEventListener('dragstart', onDragStart);
+  avatar.addEventListener('dragend', onDragEnd);
+})
+
+Array.from(salas).forEach(sala => {
+  sala.addEventListener('drop', onDrop)
+  sala.addEventListener('dragenter', onDragEnter)
+  sala.addEventListener('dragleave', onDragLeave)
+  sala.addEventListener('dragover', onDragOver)
+})
+
