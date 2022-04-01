@@ -16,7 +16,7 @@
         <div class="row  align-items-center" style="height: 100%">
             <div class="col">
                 <div class="card">
-                    <form class="card-body">
+                    <form action='http://localhost:8100/registro' method='POST' class="card-body">
                         <h5 class="card-title">Registre su cuenta en el juego</h5>
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Escoja un avatar</label>
@@ -38,13 +38,12 @@
                             </div>
                         </div>
                         <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Dirección de correo</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1"
-                                aria-describedby="emailHelp">
+                            <label for="exampleInputEmail1" class="form-label">Usuario</label>
+                            <input type="text" class="form-control" id="exampleInputEmail1" name="usuario">
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1">
+                            <input type="password" name='password' class="form-control">
                         </div>
                         <button type="submit" class="btn btn-primary">Registrar</button>
                     </form>

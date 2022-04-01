@@ -17,16 +17,15 @@
             <div class="col">
                 <div class="card">
                     <!--  Colocar un atributo de accion -->
-                    <form class="card-body">
+                    <form class="card-body" action="http://localhost:8100/ingresar" method="POST">
                         <h5 class="card-title">Inicie sesión en el juego</h5>
                         <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Dirección de correo</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1"
-                                aria-describedby="emailHelp">
+                            <label class="form-label">Usuario</label>
+                            <input type="text" class="form-control" name='usuario'>
                         </div>
                         <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1">
+                            <labe class="form-label">Contraseña</label>
+                                <input type="password" class="form-control" name="password">
                         </div>
                         <button type="submit" class="btn btn-primary">Iniciar sesión</button>
                     </form>
