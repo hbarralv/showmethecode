@@ -1,0 +1,143 @@
+@import "index.css";
+.contenedor-main {
+    padding-bottom: 40px;
+}
+.container-principal {
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
+.div-tablero {
+    justify-content: center;
+}
+.contenedor-tablero {
+    display: flex;
+    justify-content: center;
+}
+.tablero {
+    width: 500px;
+    height: 500px;
+    border-collapse: collapse;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+@media (max-width: 480px) {
+    .tablero {
+        width: 300px;
+        height: 300px;
+        border-collapse: collapse;
+        border-radius: 0.8em;
+        overflow: hidden;
+        border-radius: 10px;
+    }
+}
+@media (max-width: 1376px) {
+    .tablero {
+        margin: auto;
+        margin-top: 30px;
+    }
+}
+@media (max-width: 785px) {
+    .tablero {
+        margin: auto;
+        margin-top: 30px;
+        width: 500px;
+        height: 500px;
+    }
+}
+@media (max-width: 538px) {
+    .tablero {
+        margin: auto;
+        margin-top: 30px;
+        width: 350px;
+        height: 350px;
+    }
+}
+.tablero tr {
+    border: 1px solid rgb(0, 0, 0);
+    border-bottom: 3px solid rgb(15, 15, 15);
+}
+.tablero td {
+    border: 1px solid rgb(0, 0, 0);
+    border-bottom: 2px solid rgb(15, 15, 15);
+}
+.contenedor-columna2 {
+    display: grid;
+}
+.tabla-encabezado {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+@media (min-width: 480px) {
+    .tabla-encabezado {
+        width: 680px;
+        height: 100px;
+    }
+}
+@media (max-width: 480px) {
+    .tabla-encabezado {
+        width: 420px;
+        height: 100px;
+    }
+}
+@media (max-width: 380px) {
+    .tabla-encabezado {
+        width: 350px;
+        height: 100px;
+    }
+}
+.tabla-encabezado tr,
+td {
+    border: 1px solid rgb(5, 5, 5);
+    border-bottom: 3px solid rgb(5, 5, 5);
+    color: rgb(0, 0, 0);
+    background-color: rgb(170, 170, 170);
+}
+.tabla-encabezado td {
+    border: 1px solid rgb(5, 5, 5);
+    border-bottom: 3px solid rgb(5, 5, 5);
+}
+.tabla-score {
+    text-align: center;
+    margin-bottom: 40px;
+    border-radius: 10px;
+}
+.tabla-tabla-score {
+    max-width: 500px;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+@media (max-width: 480px) {
+    .tabla-tabla-score {
+        width: 350px;
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+}
+.tabla-tabla-score th {
+    border: 1px solid rgb(0, 0, 0);
+    border-bottom: 2px solid rgb(15, 15, 15);
+    background-color: rgb(170, 170, 170);
+    width: 500px;
+    height: 40px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.tabla-tabla-score td {
+    border: 1px solid rgb(0, 0, 0);
+    border-bottom: 3px solid rgb(15, 15, 15);
+    background-color: rgb(170, 170, 170);
+    height: 40px;
+    color: rgb(0, 0, 0);
+    text-align: center;
+}
+.line {
+    width: 50px;
+    height: 50px;
+}

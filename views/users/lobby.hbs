@@ -1,0 +1,81 @@
+<head>
+    <link rel="stylesheet" href="/public/css/lobby.css"> 
+</head>
+<body background="/public/img/patron-raro.jpg">
+    <div class="BodyCenterLobby">
+    <h1 class="titulo text-center" style="text-transform: uppercase;">¡Bienvenido! </h1>
+        <div id="container-reponsive" class="row">
+            <div class="row">
+                <div class="row">
+                    <div>
+                        <strong class="titulo letraTitulos">ELIGE TU CRIATURA:</strong>
+                    </div>
+                    <div class="slideshow-container">
+                        <br>
+                        <div class="mySlides">
+                            <img class="imgmonstruo" src="/public/img/Dracula.png" draggable="true">
+                        </div>
+                        <div class="mySlides">
+                            <img class="imgmonstruo" src="/public/img/Lobo.png" draggable="true">
+                        </div>
+                        <div class="mySlides">
+                            <img class="imgmonstruo" src="/public/img/Momia.png" draggable="true">
+                        </div>
+                        <div class="mySlides">
+                            <img class="imgmonstruo" src="/public/img/Prometeo.png" draggable="true">
+                        </div>
+                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <strong class="titulo letraTitulos">SALAS:</strong>
+    <div class="contenedorSalas">
+        <div class="col-12">
+            <div class="sala">
+                <div class="contenedorRecibemonstruo"><p class="titulo">Jugador 1</p></div>
+                <div class="contenedorRecibemonstruo"><p class="titulo">Jugador 2</p></div>
+                <div class="contenedorRecibemonstruo"><p class="titulo">Jugador 3</p></div>
+                <div class="contenedorRecibemonstruo"><p class="titulo">Jugador 4</p></div>
+            </div>
+            <button type="button" class="titulo btn btn-secondary col-12">
+            <div class=" subtitulo">sala 1</div>
+            </button>
+        </div>
+    </div>
+    <div class="contenedorSalas">
+        <div class="col-12">
+            <div class="sala">
+                <div class="contenedorRecibemonstruo"><p class="titulo">Jugador 1</p></div>
+                <div class="contenedorRecibemonstruo"><p class="titulo">Jugador 2</p></div>
+                <div class="contenedorRecibemonstruo"><p class="titulo">Jugador 3</p></div>
+                <div class="contenedorRecibemonstruo"><p class="titulo">Jugador 4</p></div>
+            </div>
+            <button type="button" class="titulo btn btn-secondary col-12">
+            <div class=" subtitulo">sala 2</div>
+            </button>
+        </div>
+    </div>
+    <div class="contenedorSalas">
+        <div class="col-12">
+            <div class="sala">
+                <div class="contenedorRecibemonstruo"><p class="titulo">Jugador 1</p></div>
+                <div class="contenedorRecibemonstruo"><p class="titulo">Jugador 2</p></div>
+                <div class="contenedorRecibemonstruo"><p class="titulo">Jugador 3</p></div>
+                <div class="contenedorRecibemonstruo"><p class="titulo">Jugador 4</p></div>
+            </div>
+            <button type="button" class="titulo btn btn-secondary col-12">
+            <div class=" subtitulo">sala 3</div>
+            </button>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+</body>
+
+<script src="/public/js/apis/dragDrop.js"></script>
+<script src="/public/js/apis/slides.js"></script>
+<script src="/socket.io/socket.io.min.js"></script>

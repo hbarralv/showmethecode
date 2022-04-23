@@ -1,0 +1,27 @@
+@import "/public/css/index.css";
+
+.navbar-superior{
+    color: var(--verde4);
+    text-align: end;
+    padding-right: 3.0%;
+}
+.navbar-inferior{
+    display: grid;
+    grid-template-columns: 49% 49%;
+    background-color: #101010;
+}
+
+.navBar-enlaces{  
+    padding-right: 2%;
+}
+    @media (min-width:  576px) {
+        .navBar-enlaces{
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+    .p1 {
+        font-family: "Lucida Console", "Courier New", monospace;
+        font-size:xx-large;
+        text-decoration: none;
+      }
