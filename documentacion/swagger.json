@@ -1,0 +1,689 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Swagger Javascript Partida API",
+    "description": "Javascript Partida API documentation"
+  },
+  "host": "localhost:3000",
+  "basePath": "/api",
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/users": {
+      "get": {
+        "description": "Returns all users.\n",
+        "parameters": [],
+        "operationId": "findUsers",
+        "responses": {
+          "200": {
+            "description": "Return all users from the application",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/User"
+              }
+            },
+            "500": {
+              "description": "General error",
+              "schema": {
+                "$ref": "#/definitions/Error"
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "description": "Creates a new user in the application.",
+        "operationId": "addUser",
+        "parameters": [
+          {
+            "name": "user",
+            "in": "body",
+            "description": "User to add to the application",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/NewUser"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Return new user.",
+            "schema": {
+              "$ref": "#/definitions/NewUser"
+            }
+          },
+          "500": {
+            "description": "General error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/users/{id}": {
+      "get": {
+        "description": "Returns a user based on a single ID",
+        "operationId": "find user by id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of user to fetch",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Return user found.",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "General error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "patch": {
+        "description": "Update a user in the application.",
+        "operationId": "updateUser",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of user to update",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "user",
+            "in": "body",
+            "description": "User to update",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/NewUser"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Return updated user.",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "General error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "delete": {
+        "description": "deletes a single user based on the ID supplied",
+        "operationId": "deleteUser",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of user to delete",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns user deleted",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "General error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/Partidas": {
+      "get": {
+        "description": "Returns all Partidas.\n",
+        "parameters": [],
+        "operationId": "findPartidas",
+        "responses": {
+          "200": {
+            "description": "Returns all Partidas from the application",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Partida"
+              }
+            }
+          },
+          "500": {
+            "description": "General error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "post": {
+        "description": "Creates a new Partida in the application.",
+        "operationId": "addPartida",
+        "parameters": [
+          {
+            "name": "Partida",
+            "in": "body",
+            "description": "Partida to add to the application",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/NewPartida"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns new Partida.",
+            "schema": {
+              "$ref": "#/definitions/NewPartida"
+            }
+          },
+          "500": {
+            "description": "General error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/Partidas/{id}": {
+      "get": {
+        "description": "Returns a Partida based on a single ID",
+        "operationId": "find Partida by id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of Partida to fetch",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns Partida found.",
+            "schema": {
+              "$ref": "#/definitions/Partida"
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "General error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "patch": {
+        "description": "Update a Partida in the application.",
+        "operationId": "updatePartida",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of Partida to update",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "Partida",
+            "in": "body",
+            "description": "Partida to update",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/NewPartida"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns updated Partida.",
+            "schema": {
+              "$ref": "#/definitions/Partida"
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "General error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "delete": {
+        "description": "deletes a Partida based on the ID supplied",
+        "operationId": "deletePartida",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of Partida to delete",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns Partida deleted",
+            "schema": {
+              "$ref": "#/definitions/Partida"
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "General error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/Salas": {
+      "get": {
+        "description": "Returns all Salas.\n",
+        "parameters": [],
+        "operationId": "findSalas",
+        "responses": {
+          "200": {
+            "description": "Returns all Salas from the application",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Sala"
+              }
+            }
+          },
+          "500": {
+            "description": "General error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "post": {
+        "description": "Creates a new Sala in the application.",
+        "operationId": "addSala",
+        "parameters": [
+          {
+            "name": "Sala",
+            "in": "body",
+            "description": "Sala to add to the application",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/NewSala"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns new Sala.",
+            "schema": {
+              "$ref": "#/definitions/NewSala"
+            }
+          },
+          "500": {
+            "description": "General error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/Salas/{id}": {
+      "get": {
+        "description": "Returns a Sala based on a single ID",
+        "operationId": "find Sala by id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of Sala to fetch",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns Sala found.",
+            "schema": {
+              "$ref": "#/definitions/Sala"
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "General error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "patch": {
+        "description": "Update a Sala in the application.",
+        "operationId": "updateSala",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of Sala to update",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "Sala",
+            "in": "body",
+            "description": "Sala to update",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/NewSala"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns updated Sala.",
+            "schema": {
+              "$ref": "#/definitions/Sala"
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "General error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "delete": {
+        "description": "deletes a Sala based on the ID supplied",
+        "operationId": "deleteSala",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of Sala to delete",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns Sala deleted",
+            "schema": {
+              "$ref": "#/definitions/Sala"
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "General error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "User": {
+      "type": "object",
+      "properties": {
+        "_id": {
+          "type": "string",
+          "description": "Mongo Object Id"
+        },
+        "name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string",
+          "description": "Email format"
+        },
+        "password": {
+          "type": "string"
+        },
+        "color":  {
+          "type": "string"
+        },
+        "image": {
+          "type": "string",
+          "description": "Image in base64"
+        }
+      }
+    },
+    "NewUser": {
+      "type": "object",
+      "required": [
+        "name",
+        "email",
+        "password",
+        "color"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string",
+          "description": "Valid email format"
+        },
+        "password": {
+          "type": "string"
+        },
+        "color":  {
+          "type": "string",
+          "description": "Hexadecimal color"
+        },
+        "image": {
+          "type": "string",
+          "description": "Base64 image"
+        }
+      }
+    },
+    "Username": {
+      "type": "object",
+      "properties": {
+        "playerId": {
+          "type": "string"
+        },
+        "points": {
+          "type": "number"
+        },
+        "state": {
+          "type": "string",
+          "enum": ["Esperando", "Listo", "Fuera"]
+        }
+      }
+    },
+    "Partida": {
+      "type": "object",
+      "properties": {
+        "_id": {
+          "type": "string",
+          "description": "Mongo ObjectId"
+        },
+        "playersData": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Username"
+          }
+
+        },
+        "turn": {
+          "type": "string",
+          "description": "Player ID (Mongo ObjectId) who owns the turn"
+        }
+      }
+    },
+    "NewPartida": {
+      "type": "object",
+      "required": [
+        "playersData"
+      ],
+      "properties": {
+        "playersData": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Username"
+          }
+
+        },
+        "turn": {
+          "type": "string",
+          "description": "Player ID (Mongo ObjectId) who owns the turn"
+        }
+      }
+    },
+    "Sala": {
+      "type": "object",
+      "properties": {
+        "_id": {
+          "type": "string",
+          "description": "Mongo ObjectId"
+        },
+        "name": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string",
+          "enum": ["Esperando jugadores", "En curso"]
+        },
+        "Partida": {
+          "type": "string",
+          "description": "Mongo ObjectId"
+        },
+        "users": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "User Mongo ObjectId"
+          }
+        }
+      }
+    },
+    "NewSala": {
+      "type": "object",
+      "required": [
+        "name",
+        "state"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string",
+          "enum": ["Esperando jugadores", "En curso"]
+        },
+        "Partida": {
+          "type": "string",
+          "description": "Mongo ObjectId"
+        },
+        "users": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "User Mongo ObjectId"
+          }
+        }
+      }
+    },
+    "Error": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "integer"
+        },
+        "type": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

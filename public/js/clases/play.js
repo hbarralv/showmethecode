@@ -6,17 +6,11 @@ let jugadores = new Array();
 function play() {
     partida = new Partida();
     let jugador1 = new Jugador('01', 'Dracula');
-    jugador1.setColor("red");
+    jugador1.setColor("beige");
     jugadores.push(jugador1)
     let jugador2 = new Jugador('02', 'Lobo');
     jugador2.setColor("purple");
     jugadores.push(jugador2)
-    let jugador3 = new Jugador('03', 'Momia');
-    jugador3.setColor("beige");
-    jugadores.push(jugador3)
-    let jugador4 = new Jugador('04', 'Prometeo');
-    jugador4.setColor("aqua");
-    jugadores.push(jugador4)
     partida.asignarJugadoresCasillaInicio(jugadores);
 }
 

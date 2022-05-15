@@ -3,13 +3,14 @@
 
 
 .BodyCenterLobby {
-
     padding: 3%;
 }
 
 .letraTitulos {
     font-size: 30px;
     color: #ffff;
+    font: bold;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 #container-reponsive {
@@ -24,7 +25,8 @@
 .slideshow-container {
     border-style: inset;
     height: 250px;
-    width: 100%;
+    width: 50%;
+    margin: auto;
     position: relative;
     background-color: var(--gris2);
 }
@@ -91,7 +93,7 @@
 
 .contenedorSalas {
     display: flex;
-    padding: 10px 0px;
+    padding: 5px 0px;
 }
 
 .sala {
@@ -100,7 +102,19 @@
     border-color: #000000;
     border-radius: 0.25rem;
     display: grid;
-    grid-template-columns: 25% 25% 25% 25%;
+    width: 50%;
+    margin: auto;
+    grid-template-columns: 50% 50%;
+}
+
+.tituloSala {
+    margin:auto; 
+    width: 60px;
+    padding: 5px 0px;
+    color: #aaaaaa;
+    font-size:18px;
+    font: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 @media (min-width: 1024px) {

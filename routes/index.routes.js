@@ -5,7 +5,6 @@ const router = Router();
 
 //Rutas
 router.get("/", index.renderIndex);
-router.get("/contact", index.renderContact);
 router.get("/register", index.renderRegister);
 
 //Exportaciones

@@ -1,12 +1,7 @@
 class Partida{
     constructor(){                
         this._tableroDeJuego = this.nuevoTableroDeJuego();
-        this._jugadores      = null;       
-        this._cronometro     = null;               
-        this._tableroScore   = null     
-        this._chat           = null;
-        this._ronda          = 0;
-        this._ganador        = false;                                         
+        this._jugadores      = null;                                              
     }
     getTableroDeJuego(){
         return this._tableroDeJuego;
@@ -29,16 +24,7 @@ class Partida{
         }
         this.setJugadores(jugadores);
     }
-    nuevaRonda(){
-        let jugadorActual;
-        let cronometro = new Cronometro();
-        if (!this._ganador){
-            jugadorActual = this._jugadores[0];
-            console.log(jugadorActual);
-            jugadorActual.capturaCasilla();
-        }
-    }
-    mostrarGanador(){}
+ 
     mostrarJugadores(){}
-    almacenarScore(){}
+
 }
